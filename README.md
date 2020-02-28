@@ -6,8 +6,6 @@ Follow the inscrution here:
 
 https://gist.github.com/vdelacou/58484f1c11af70aaa457f4e5c289e893#file-readme-md
 
-Commit `Init project eslint`
-
 ## Add the Template
 
 Clean the template file
