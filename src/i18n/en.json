@@ -1,0 +1,27 @@
+{
+  "layouts": {
+    "ContentLayout": {
+      "NotFound": {
+        "mainTitle": "Page Not Found"
+      }
+    },
+    "MainLayout": {
+      "DashboardLayout": {
+        "headerComponent": {
+          "headerTitle": "Dashboard"
+        }
+      }
+    }
+  },
+  "pages": {
+    "Account": {
+      "mainTitle": "Account"
+    },
+    "Home": {
+      "mainTitle": "Home"
+    },
+    "Login": {
+      "mainTitle": "Login"
+    }
+  }
+}
