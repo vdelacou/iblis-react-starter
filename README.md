@@ -20,4 +20,4 @@ Install the libraries
 
 Copy the code to your src folder
 
-`curl https://codeload.github.com/vdelacou/iblis-react-starter/tar.gz/master | tar -xz --strip=1 iblis-react-starter-master/src -C ./src`
+`curl https://codeload.github.com/vdelacou/iblis-react-starter/tar.gz/master | tar -xz --strip=1 iblis-react-starter-master/src`
