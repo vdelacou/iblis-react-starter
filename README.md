@@ -14,7 +14,7 @@ Clean the template file
 
 Install the libraries
 
-`npm install typeface-roboto @material-ui/core @material-ui/icons react-router react-router-dom i18n-js`
+`npm install typeface-roboto @material-ui/core @material-ui/icons react-router react-router-dom i18n-js clsx history`
 
 `npm install --save-dev @types/react-router-dom @types/i18n-js`
 

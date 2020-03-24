@@ -24,7 +24,7 @@ export const createStore = <T extends {}, S extends {}>(
 
   const StoreContext = createContext<typeof intialContext>(intialContext);
 
-  const StoreProvider: FC = props => {
+  const StoreProvider: FC = (props) => {
     const store = useApi(apiFactory, initialState);
 
     return <StoreContext.Provider value={store}>{props.children}</StoreContext.Provider>;

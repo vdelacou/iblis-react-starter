@@ -1,12 +1,23 @@
-import { t } from 'i18n-js';
+import { Box } from '@material-ui/core';
 import React, { FC } from 'react';
-import { DashboardLayout } from '../../components/dashboard_layout';
-import { Header } from '../../components/header';
 import { ContentLayout } from '../content_layout';
+import { NavigatorLayout } from '../navigator_layout';
+import { useHandleToggleNavigator } from './hooks';
 
 /**
  * The main layout for the app
  */
 export const MainLayout: FC = () => {
-  return <DashboardLayout headerComponent={<Header headerTitle={t('layouts.MainLayout.DashboardLayout.headerComponent.headerTitle')} />} contentComponent={<ContentLayout />} />;
+  const [navigatorOpen, handleToggleNavigator] = useHandleToggleNavigator();
+
+  return (
+    <Box display="flex">
+      <Box component="nav">
+        <NavigatorLayout open={navigatorOpen} toggleNavigator={handleToggleNavigator} />
+      </Box>
+      <Box flex={1}>
+        <ContentLayout toggleNavigator={handleToggleNavigator} />
+      </Box>
+    </Box>
+  );
 };

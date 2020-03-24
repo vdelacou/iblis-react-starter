@@ -1,27 +1,63 @@
 {
   "layouts": {
-    "ContentLayout": {
-      "NotFound": {
-        "mainTitle": "Page Not Found"
+    "HeaderLayout": {
+      "getSettingsHeaderMenu": {
+        "activeUsers": "Active Users",
+        "disabledUsers": "Disabled Users"
+      },
+      "useGetUserHeaderMenu": {
+        "settings": "Settings",
+        "logout": "Log out"
+      },
+      "useGetHeaderMenu": {
+        "getHeaderTitle": {
+          "dashboard": "Dashboard",
+          "users": "Users"
+        }
       }
     },
-    "MainLayout": {
-      "DashboardLayout": {
-        "headerComponent": {
-          "headerTitle": "Dashboard"
+    "NavigatorLayout": {
+      "getDashboardMenu": {
+        "categoryName": "Dashboard",
+        "menuList": {
+          "sales": "Sales",
+          "analytics": "Analytics"
         }
+      },
+      "getSettingsMenu": {
+        "categoryName": "Settings",
+        "menuList": {
+          "users": "Users"
+        }
+      },
+      "useGetWorkspace": {
+        "workspaceStatusPaidLabel": "Paid",
+        "workspaceStatusTrialLabel": "Trial",
+        "workspaceStatusUnpaidLabel": "UnPaid"
+      },
+      "Navigator": {
+        "mainTitle": "Iblis",
+        "workspaceSettingsTooltip": "See Workspace Settings"
       }
     }
   },
   "pages": {
-    "Account": {
-      "mainTitle": "Account"
+    "DashbaordAnalytics": {
+      "mainTitle": "Analytics Page"
     },
-    "Home": {
-      "mainTitle": "Home"
+    "DashbaordSales": {
+      "mainTitle": "Sales Page"
     },
-    "Login": {
-      "mainTitle": "Login"
+    "RouteNotFound": {
+      "NotFound": {
+        "mainTitle": "Page Not Found"
+      }
+    },
+    "SettingsUsersActive": {
+      "mainTitle": "Users Active Page"
+    },
+    "SettingsUsersDisabled": {
+      "mainTitle": "Users Disabled Page"
     }
   }
 }

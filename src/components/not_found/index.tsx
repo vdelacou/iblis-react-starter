@@ -4,10 +4,12 @@ import React, { FC } from 'react';
 /*
  * The Not Found Component
  */
-export const NotFound: FC<NotFoundProps> = props => {
+export const NotFound: FC<NotFoundProps> = (props) => {
   return (
-    <Box height="100vh" display="flex" alignItems="center" justifyContent="center" flexDirection="row">
-      <Typography variant="h1">{props.mainTitle}</Typography>
+    <Box display="flex" alignItems="center" justifyContent="center" flexDirection="row">
+      <Typography align="center" variant="h2">
+        {props.mainTitle}
+      </Typography>
     </Box>
   );
 };

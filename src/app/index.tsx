@@ -6,13 +6,19 @@ import { ErrorMessageStoreProvider } from '../stores/error_message_store';
 import { appTheme } from '../theme';
 import { AppInitializer } from './app_initializer';
 
+/*
+ * The Entry point for the App
+ */
 const App: FC = () => {
   return (
     <ThemeProvider theme={appTheme}>
       <CssBaseline />
       <Router>
+        {/* All the stores */}
         <ErrorMessageStoreProvider>
+          {/* The app it self */}
           <AppInitializer />
+          {/*  */}
         </ErrorMessageStoreProvider>
       </Router>
     </ThemeProvider>
