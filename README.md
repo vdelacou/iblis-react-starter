@@ -21,3 +21,10 @@ Install the libraries
 Copy the code to your src folder
 
 `curl https://codeload.github.com/vdelacou/iblis-react-starter/tar.gz/master | tar -xz --strip=1 iblis-react-starter-master/src`
+
+
+## Choose a Theme
+
+### PaperBase
+
+`curl -o src/theme/index.ts https://raw.githubusercontent.com/vdelacou/iblis-react-starter/master/theme/paperbase/index.ts`
