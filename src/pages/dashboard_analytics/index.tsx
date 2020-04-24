@@ -7,7 +7,7 @@ import React, { FC } from 'react';
  */
 export const DashbaordAnalytics: FC = () => {
   return (
-    <Box p={4}>
+    <Box p={3}>
       <Typography align="center" variant="h2">
         {t('pages.DashbaordAnalytics.mainTitle')}
       </Typography>

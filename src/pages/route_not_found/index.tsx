@@ -8,7 +8,7 @@ import { NotFound } from '../../components/not_found';
  */
 export const RouteNotFound: FC = () => {
   return (
-    <Box p={4}>
+    <Box p={3}>
       <NotFound mainTitle={t('pages.RouteNotFound.NotFound.mainTitle')} />
     </Box>
   );
