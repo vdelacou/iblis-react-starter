@@ -18,7 +18,7 @@ const useApi = <T extends {}, S extends {}>(apiFactory: (state: T, setState: Dis
 export const createStore = <T extends {}, S extends {}>(
   apiFactory: (state: T, setState: Dispatch<SetStateAction<T>>) => S,
   initialState: T
-): { storeProvider: React.FC<{}>; useStore: () => S } => {
+): { storeProvider: FC<{}>; useStore: () => S } => {
   // need initial context
   const intialContext = {} as S;
 
