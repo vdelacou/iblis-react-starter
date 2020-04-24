@@ -14,6 +14,7 @@ export const AppInitializer: FC = () => {
   const [errorMessage, handleCloseError] = useInitErrorManagement();
 
   // init the internationalization
+  i18n.locale = navigator.language;
   i18n.fallbacks = true;
   i18n.translations = { en };
 
