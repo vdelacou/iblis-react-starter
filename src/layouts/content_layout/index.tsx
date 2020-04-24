@@ -1,13 +1,13 @@
-import { Box } from '@material-ui/core';
-import React, { FC } from 'react';
-import { Route, Switch } from 'react-router';
-import { ROUTES } from '../../config/route-config';
-import { DashbaordAnalytics } from '../../pages/dashboard_analytics';
-import { DashbaordSales } from '../../pages/dashboard_sales';
-import { RouteNotFound } from '../../pages/route_not_found';
-import { SettingsUsersActive } from '../../pages/settings_users_active';
-import { SettingsUsersDisabled } from '../../pages/settings_users_disabled';
-import { HeaderLayout } from '../header_layout';
+import { Box } from "@material-ui/core";
+import React, { FC } from "react";
+import { Redirect, Route, Switch } from "react-router";
+import { ROUTES } from "../../config/route-config";
+import { DashbaordAnalytics } from "../../pages/dashboard_analytics";
+import { DashbaordSales } from "../../pages/dashboard_sales";
+import { RouteNotFound } from "../../pages/route_not_found";
+import { SettingsUsersActive } from "../../pages/settings_users_active";
+import { SettingsUsersDisabled } from "../../pages/settings_users_disabled";
+import { HeaderLayout } from "../header_layout";
 
 /**
  * The main layout for the app
@@ -33,6 +33,8 @@ export const ContentLayout: FC<ContentLayoutProps> = (props) => {
           <Route exact path={ROUTES.SETTINGS_USER_DISABLED}>
             <SettingsUsersDisabled />
           </Route>
+          {/* Redirect root path */}
+          <Redirect exact from="/" to={ROUTES.DASHBOARD_SALES} />
           {/* For every routes not found */}
           <Route path="*">
             <RouteNotFound />
