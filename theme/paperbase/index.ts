@@ -47,6 +47,7 @@ export const appTheme = createMuiTheme({
       disableRipple: true,
       disableTouchRipple: true,
       disableFocusRipple: true,
+      disableElevation: true,
     },
     MuiIconButton: {
       disableRipple: true,

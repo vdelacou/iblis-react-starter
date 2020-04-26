@@ -1,12 +1,12 @@
-import { Box, Divider, Drawer, List, ListItem, ListItemIcon, ListItemText, ListSubheader, makeStyles, Theme, Tooltip, Typography } from '@material-ui/core';
+import { Box, createStyles, Divider, Drawer, List, ListItem, ListItemIcon, ListItemText, ListSubheader, makeStyles, Tooltip, Typography } from '@material-ui/core';
 import { fade, useTheme } from '@material-ui/core/styles';
 import { SvgIconProps } from '@material-ui/core/SvgIcon';
 import SettingsIcon from '@material-ui/icons/Settings';
 import clsx from 'clsx';
 import React, { FC, Fragment, ReactElement } from 'react';
 
-const useStyles = makeStyles((theme: Theme) => {
-  return {
+const useStyles = makeStyles((theme) =>
+  createStyles({
     drawerPaper: {
       color: theme.palette.common.white,
       backgroundColor: theme.palette.secondary.light,
@@ -44,8 +44,8 @@ const useStyles = makeStyles((theme: Theme) => {
     listItemFontColor: {
       color: fade(theme.palette.common.white, 0.7),
     },
-  };
-});
+  })
+);
 
 /*
  * The Navigator menu

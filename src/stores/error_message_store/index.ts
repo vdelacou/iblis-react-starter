@@ -1,12 +1,15 @@
 import { Dispatch, SetStateAction } from 'react';
 import { createStore } from '../../utils/create_store';
 
+interface ErrorMessageStoreState {
+  errorMessage: string | null;
+}
 interface ErrorMessageStoreApi {
   getErrorMessage: () => string | null;
   setErrorMessage: (errorMessage: string | null) => void;
 }
 
-const storeApi = (state: { errorMessage: string | null }, setState: Dispatch<SetStateAction<{ errorMessage: string | null }>>): ErrorMessageStoreApi => {
+const storeApi = (state: ErrorMessageStoreState, setState: Dispatch<SetStateAction<ErrorMessageStoreState>>): ErrorMessageStoreApi => {
   const getErrorMessage = (): string | null => {
     return state.errorMessage;
   };
