@@ -20,8 +20,8 @@ export const useInitErrorManagement = (): [
       return;
     }
     // we don't display the error message anymore
-    setErrorMessage(null);
+    setErrorMessage({ message: null });
   };
 
-  return [getErrorMessage(), handleCloseError];
+  return [getErrorMessage().message, handleCloseError];
 };

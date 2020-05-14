@@ -1,19 +1,20 @@
 import { Dispatch, SetStateAction } from 'react';
 import { createStore } from '../../utils/create_store';
+import { ErrorMessage } from './model';
 
 interface ErrorMessageStoreState {
-  errorMessage: string | null;
+  errorMessage: ErrorMessage;
 }
 interface ErrorMessageStoreApi {
-  getErrorMessage: () => string | null;
-  setErrorMessage: (errorMessage: string | null) => void;
+  getErrorMessage: () => ErrorMessage;
+  setErrorMessage: (errorMessage: ErrorMessage) => void;
 }
 
 const storeApi = (state: ErrorMessageStoreState, setState: Dispatch<SetStateAction<ErrorMessageStoreState>>): ErrorMessageStoreApi => {
-  const getErrorMessage = (): string | null => {
+  const getErrorMessage = (): ErrorMessage => {
     return state.errorMessage;
   };
-  const setErrorMessage = (errorMessage: string | null): void => {
+  const setErrorMessage = (errorMessage: ErrorMessage): void => {
     setState({ errorMessage });
   };
 
@@ -23,7 +24,7 @@ const storeApi = (state: ErrorMessageStoreState, setState: Dispatch<SetStateActi
   };
 };
 
-const store = createStore(storeApi, { errorMessage: null });
+const store = createStore(storeApi);
 
 /**
  * Manage error globally

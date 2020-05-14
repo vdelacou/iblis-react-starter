@@ -15,7 +15,7 @@ const App: FC = () => {
       <CssBaseline />
       <Router>
         {/* All the stores */}
-        <ErrorMessageStoreProvider>
+        <ErrorMessageStoreProvider errorMessage={{ message: null }}>
           {/* The app it self */}
           <AppInitializer />
           {/*  */}
