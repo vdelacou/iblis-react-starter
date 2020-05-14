@@ -1,10 +1,10 @@
 import { t } from 'i18n-js';
-import { useHistory } from 'react-router';
+import { useLocation } from 'react-router';
 import { MenuNavigationProps } from '../../components/menu_navigation';
 import { UserMenuProps } from '../../components/user_menu';
 import { ROUTES } from '../../config/route-config';
-import { getSettingsHeaderMenu } from './settings_header_menu';
-import { useGetUserHeaderMenu } from './user_menu';
+import { useGetSettingsHeaderMenu } from './settings_header_menu/hooks';
+import { useGetUserHeaderMenu } from './user_menu/hooks';
 
 /**
  * Get the header menu
@@ -15,22 +15,23 @@ import { useGetUserHeaderMenu } from './user_menu';
  *      - the menu to display, empty array if no menu
  */
 export const useGetHeaderMenu = (): [string, UserMenuProps, MenuNavigationProps] => {
-  const history = useHistory();
+  const location = useLocation();
   const [userMenuProps] = useGetUserHeaderMenu();
+  const settingsHeaderMenu = useGetSettingsHeaderMenu();
 
   const getHeaderTitle = (): string => {
-    if (history.location.pathname.includes(ROUTES.DASHBOARD_SALES) || history.location.pathname.includes(ROUTES.DASHBOARD_ANALYTICS)) {
+    if (location.pathname.includes(ROUTES.DASHBOARD_SALES) || location.pathname.includes(ROUTES.DASHBOARD_ANALYTICS)) {
       return t('layouts.HeaderLayout.useGetHeaderMenu.getHeaderTitle.dashboard');
     }
-    if (history.location.pathname.includes(ROUTES.SETTINGS_USER_ACTIVE) || history.location.pathname.includes(ROUTES.SETTINGS_USER_DISABLED)) {
+    if (location.pathname.includes(ROUTES.SETTINGS_USER_ACTIVE) || location.pathname.includes(ROUTES.SETTINGS_USER_DISABLED)) {
       return t('layouts.HeaderLayout.useGetHeaderMenu.getHeaderTitle.users');
     }
     return '';
   };
 
   const subMenu = (): MenuNavigationProps => {
-    if (history.location.pathname.includes(ROUTES.SETTINGS_USER_ACTIVE) || history.location.pathname.includes(ROUTES.SETTINGS_USER_DISABLED)) {
-      return getSettingsHeaderMenu(history);
+    if (location.pathname.includes(ROUTES.SETTINGS_USER_ACTIVE) || location.pathname.includes(ROUTES.SETTINGS_USER_DISABLED)) {
+      return settingsHeaderMenu;
     }
     return { activeIndex: -1, subMenu: [] };
   };

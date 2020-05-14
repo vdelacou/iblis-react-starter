@@ -1,10 +1,9 @@
 import { t } from 'i18n-js';
 import { useState } from 'react';
-import { useHistory } from 'react-router';
 import { NavigatorMenuProps } from '../../components/navigator';
 import { WORSPACE_STATUS } from '../../config';
-import { getDashboardMenu } from './dashboard_menu';
-import { getSettingsMenu } from './settings_menu';
+import { useGetDashboardMenu } from './dashboard_menu/hooks';
+import { useGetSettingsMenu } from './settings_menu/hooks';
 
 /**
  * Get the menu for the user button
@@ -13,9 +12,7 @@ import { getSettingsMenu } from './settings_menu';
  *      - an array with all the menus
  */
 export const useGetMenu = (): [Array<NavigatorMenuProps>] => {
-  const history = useHistory();
-
-  const menu = [getDashboardMenu(history), getSettingsMenu(history)];
+  const menu = [useGetDashboardMenu(), useGetSettingsMenu()];
 
   return [menu];
 };

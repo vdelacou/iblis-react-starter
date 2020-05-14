@@ -1,20 +1,23 @@
 import DashboardIcon from '@material-ui/icons/Dashboard';
 import EqualizerIcon from '@material-ui/icons/Equalizer';
-import { History } from 'history';
 import { t } from 'i18n-js';
 import React from 'react';
+import { useHistory, useLocation } from 'react-router';
 import { NavigatorMenuProps } from '../../../components/navigator';
 import { ROUTES } from '../../../config/route-config';
 
 /**
  * Get the menu for the dashboard in the navigator
  */
-export const getDashboardMenu = (history: History): NavigatorMenuProps => {
+export const useGetDashboardMenu = (): NavigatorMenuProps => {
+  const history = useHistory();
+  const location = useLocation();
+
   const getActiveIndex = (): number => {
-    if (history.location.pathname.includes(ROUTES.DASHBOARD_SALES)) {
+    if (location.pathname.includes(ROUTES.DASHBOARD_SALES)) {
       return 0;
     }
-    if (history.location.pathname.includes(ROUTES.DASHBOARD_ANALYTICS)) {
+    if (location.pathname.includes(ROUTES.DASHBOARD_ANALYTICS)) {
       return 1;
     }
     return -1;
